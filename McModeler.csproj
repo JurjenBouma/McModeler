@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FF1B6893-D8EE-4B92-AD06-4C3C89BF1B81}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MCModeler</RootNamespace>
+    <AssemblyName>SlimDxSetup</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SlimDX, Version=4.0.13.43, Culture=neutral, PublicKeyToken=b1b0c32fd1ffe4f9" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Arrow.cs" />
+    <Compile Include="Box.cs" />
+    <Compile Include="Camera.cs" />
+    <Compile Include="CoordinateGrid.cs" />
+    <Compile Include="Cube.cs" />
+    <Compile Include="CubeFace.cs" />
+    <Compile Include="Editors\Editor.cs" />
+    <Compile Include="Editors\Mover.cs" />
+    <Compile Include="Editors\Shaper.cs" />
+    <Compile Include="FloatTexBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TreeNodes\ControlTreeNode.cs" />
+    <Compile Include="CustomTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ElementRotation.cs" />
+    <Compile Include="JsonWriter.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JsonStructure.cs" />
+    <Compile Include="JsonElement.cs" />
+    <Compile Include="JsonReader.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="Keyboard.cs" />
+    <Compile Include="KeyboardState.cs" />
+    <Compile Include="Line.cs" />
+    <Compile Include="Model.cs" />
+    <Compile Include="ModelTexture.cs" />
+    <Compile Include="Mouse.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Renderer.cs" />
+    <Compile Include="TreeNodes\TreeNodeArray.cs" />
+    <Compile Include="TreeNodes\TreeNodeBool.cs" />
+    <Compile Include="TreeNodes\TreeNodeElement.cs" />
+    <Compile Include="TreeNodes\TreeNodeFace.cs" />
+    <Compile Include="TreeNodes\TreeNodeFloat.cs" />
+    <Compile Include="TreeNodes\TreeNodeInt.cs" />
+    <Compile Include="TreeNodes\TreeNodeModel.cs" />
+    <Compile Include="TreeNodes\TreeNodeRotation.cs" />
+    <Compile Include="TreeNodes\TreeNodeString.cs" />
+    <Compile Include="TreeNodes\TreeNodeTexture.cs" />
+    <Compile Include="TreeNodes\TreeNodeVector3.cs" />
+    <Compile Include="TreeNodes\TreeNodeVector4.cs" />
+    <Compile Include="Vector3Control.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Vector4Control.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="textures\blocks\fire_layer_0.png.mcmeta" />
+    <None Include="textures\blocks\fire_layer_1.png.mcmeta" />
+    <None Include="textures\blocks\lava_flow.png.mcmeta" />
+    <None Include="textures\blocks\lava_still.png.mcmeta" />
+    <None Include="textures\blocks\portal.png.mcmeta" />
+    <None Include="textures\blocks\prismarine_rough.png.mcmeta" />
+    <None Include="textures\blocks\sea_lantern.png.mcmeta" />
+    <None Include="textures\blocks\water_flow.png.mcmeta" />
+    <None Include="textures\blocks\water_still.png.mcmeta" />
+    <None Include="textures\items\clock.png.mcmeta" />
+    <None Include="textures\items\compass.png.mcmeta" />
+    <None Include="textures\misc\enchanted_item_glint.png.mcmeta" />
+    <None Include="textures\misc\pumpkinblur.png.mcmeta" />
+    <None Include="textures\misc\shadow.png.mcmeta" />
+    <None Include="textures\misc\vignette.png.mcmeta" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewFileModernDetail49x60.png" />
+    <None Include="Resources\FilesPileModernDetail83x801.png" />
+    <None Include="Resources\SaveScrollsFolderModernDetail57x60.png" />
+    <None Include="Resources\OpenBluePrintModernDetail44x60.png" />
+    <None Include="Resources\AxisMoveBrown92x80.png" />
+    <None Include="Resources\Shape73x80.png" />
+    <None Include="Resources\Rotate82x80.png" />
+    <None Include="Resources\Select57x80.png" />
+    <None Include="Resources\Scale2-78x80.png" />
+    <None Include="Resources\NewElementGrass97x80.png" />
+    <None Include="Resources\RemoveElementGrass99x80Cut.png" />
+    <None Include="Resources\CopyGrass122x80.png" />
+    <None Include="Resources\TextureButtonRedPaper155x80.png" />
+    <Content Include="Shaders.fx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="textures\*\*.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="textures\*\*\*.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="textures\*\*\*\*.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="models\*\*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="models\*\*\*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="models\*\*\*\*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="textures\Tool\MissingTexture.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
